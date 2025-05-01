@@ -1,70 +1,55 @@
-## MCP Series
+# MCP Series
 
-Collection of Model Context Protocol (MCP) servers that enable powerful automation between AI and diverse external services and platforms.
+A comprehensive collection of Model Context Protocol (MCP) servers that empower AI assistants with advanced capabilities to interact with external services, platforms, content sources, and real-time data.
 
-### About
+## About MCP Series
 
-MCP Series is an organization dedicated to developing and maintaining high-quality Model Context Protocol (MCP) servers. Our mission is to expand the capabilities of LLMs through well-designed integrations that connect language models with external services, applications, and data sources.
+MCP Series is a professional organization dedicated to developing and maintaining enterprise-grade Model Context Protocol (MCP) servers. Our mission is to extend the capabilities of Large Language Models (LLMs) through rigorously designed integrations, enabling seamless connections between AI systems and a diverse range of external services, applications, and real-time data sources. We currently maintain a growing ecosystem of four production-ready MCP servers with more integrations in active development.
 
-#### What is MCP?
+### What is the Model Context Protocol (MCP)?
 
-The Model Context Protocol (MCP) is a framework that allows LLMs (Large Language Models) to access external tools and services. MCP servers act as bridges between AI systems and various applications, enabling LLMs to perform actions in the real world that would otherwise be impossible within their standard context window.
+[MCP](https://modelcontextprotocol.io/) is an open protocol that enables AI models to securely interact with local and remote resources through standardized server implementations. This protocol focuses on production-ready and experimental MCP servers that extend AI capabilities through file access, database connections, API integrations, and other contextual services.
 
-### Our Repositories
+## Our Repositories
 
-#### Current Projects
+| Repository | Description | Key Features |
+|------------|-------------|--------------|
+| [**mcp-status-observer**](https://github.com/mcp-series/mcp-status-observer) | Real-time monitoring of major digital platforms | <ul><li>Track operational status across 20+ platforms</li><li>Detailed component-level monitoring</li><li>Status history and incident tracking</li><li>Support for GitHub, Cloudflare, Vercel, LinkedIn, etc.</li></ul> |
+| [**mcp-claude-hackernews**](https://github.com/mcp-series/mcp-claude-hackernews) | Browse and interact with Hacker News content | <ul><li>Access latest, top, and best-rated stories</li><li>View story details and comments</li><li>Clean formatting for improved readability</li><li>Natural language query support</li></ul> |
+| [**mcp-claude-spotify**](https://github.com/mcp-series/mcp-claude-spotify) | Comprehensive Spotify control and management | <ul><li>Search tracks, albums, artists, and playlists</li><li>Full playback control</li><li>Create and manage playlists</li><li>Personalized recommendations</li><li>Access top played tracks</li></ul> |
+| [**mcp-rss-aggregator**](https://github.com/mcp-series/mcp-rss-aggregator) | Versatile RSS feed reader and content aggregator | <ul><li>Read articles from multiple RSS feeds</li><li>OPML import support for existing subscriptions</li><li>Category-based organization</li><li>Source-specific filtering</li><li>Well-formatted article presentation</li></ul> |
 
-- [**mcp-status-observer**](https://github.com/mcp-series/mcp-status-observer): Monitor operational status of major digital platforms in real-time
-- [**mcp-claude-hackernews**](https://github.com/mcp-series/mcp-claude-hackernews): Browse and interact with Hacker News content
-- [**mcp-claude-spotify**](https://github.com/mcp-series/mcp-claude-spotify): Control Spotify, search music, and manage playlists
 
-#### Common Features
+## Contributing
 
-- Easy installation and configuration
-- Detailed documentation
-- Robust error handling
-- Auto-start capabilities
-- Regular updates and maintenance
+We welcome contributions from developers passionate about expanding AI capabilities through MCP integrations. Our contribution process is designed to maintain high code quality while making it easy to get involved:
 
-### Getting Started
+1. **Fork** the specific repository you're interested in
+2. **Create** a feature branch (`git checkout -b feature/amazing-feature`)
+3. **Develop** your contribution following our coding standards
+4. **Test** thoroughly to ensure quality and compatibility
+5. **Commit** your changes (`git commit -m 'Add some amazing feature'`)
+6. **Push** to your branch (`git push origin feature/amazing-feature`)
+7. **Submit** a Pull Request with comprehensive documentation
 
-Most of our MCP servers follow a similar installation pattern:
+We particularly value contributions that:
+- Add new platform integrations
+- Enhance existing functionality
+- Improve error handling and resilience
+- Optimize performance
+- Extend documentation
 
-1. Clone the desired repository
-2. Install dependencies with `npm install`
-3. Configure your credentials if required
-4. Set up the MCP in your AI assistant's configuration
+## License
 
-Detailed installation instructions are available in each repository's README.
+All MCP Series repositories are licensed under the Mozilla Public License 2.0, which allows for open collaboration while protecting our collective work.
 
-### Contributing
+## Contact & Support
 
-We welcome contributions from developers interested in expanding AI capabilities through MCP integrations. If you'd like to contribute:
-
-1. Fork the specific repository you're interested in
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-### Roadmap
-
-We're continually working to expand our collection of MCP servers. Some areas we're exploring:
-
-- Calendar and scheduling integrations
-- Email and communication platforms
-- Project management tools
-- Development environment integrations
-- Media and content management
-
-### License
-
-All our repositories are licensed under the Mozilla Public License 2.0.
-
-### Contact
-
-For questions, feedback, or collaboration inquiries, please open an issue in the relevant repository.
+For questions, feedback, or collaboration inquiries:
+- Open an issue in the relevant repository
+- Check existing issues for potential solutions
+- Provide detailed information when reporting problems
 
 ---
 
-*The MCP Series organization is not affiliated with Anthropic or any AI assistant providers. We build independent tools that enhance AI capabilities through the open Model Context Protocol standard.*
+*The MCP Series organization is an independent initiative not affiliated with Anthropic or any AI assistant providers. We develop open tools that enhance AI capabilities through the Model Context Protocol standard.*
