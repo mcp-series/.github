@@ -1,0 +1,97 @@
+name: Auto Update Organization Forks
+
+on:
+  schedule:
+    - cron: '0 2 * * *'
+  workflow_dispatch:
+
+concurrency:
+  group: auto-update-forks
+  cancel-in-progress: false
+
+jobs:
+  update-forks:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      max-parallel: 2
+      matrix:
+        fork:
+          - { name: "mcp-claude-spotify", upstream: "imprvhub/mcp-claude-spotify" }
+          - { name: "mcp-claude-hackernews", upstream: "imprvhub/mcp-claude-hackernews" }
+          - { name: "mcp-rss-aggregator", upstream: "imprvhub/mcp-rss-aggregator" }
+          - { name: "mcp-status-observer", upstream: "imprvhub/mcp-status-observer" }
+          - { name: "mcp-browser-agent", upstream: "imprvhub/mcp-browser-agent" }
+          - { name: "mcp-meme-sticky", upstream: "nkapila6/mcp-meme-sticky" }
+          - { name: "mcp-local-rag", upstream: "nkapila6/mcp-local-rag" }
+          - { name: "mcp-domain-availability", upstream: "imprvhub/mcp-domain-availability" }
+    
+    steps:
+      - name: Update ${{ matrix.fork.name }}
+        run: |
+          echo "🔄 Updating ${{ matrix.fork.name }} from ${{ matrix.fork.upstream }}"
+          
+          # Clone fork with token
+          git clone https://x-access-token:${{ secrets.ORG_TOKEN }}@github.com/mcp-series/${{ matrix.fork.name }}.git
+          cd ${{ matrix.fork.name }}
+          
+          # Configure git
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          
+          # Add upstream and fetch
+          git remote add upstream https://github.com/${{ matrix.fork.upstream }}.git
+          git fetch upstream main
+          
+          # Check if behind
+          LOCAL=$(git rev-parse HEAD)
+          UPSTREAM=$(git rev-parse upstream/main)
+          
+          if [ "$LOCAL" = "$UPSTREAM" ]; then
+            echo "✅ Already up to date"
+          else
+            echo "📥 Updating from upstream"
+            
+            # Try to merge upstream
+            if git merge upstream/main --no-edit; then
+              # Successful merge
+              git push origin main
+              echo "✅ Updated successfully"
+            else
+              echo "⚠️ Merge conflicts detected - attempting automatic resolution"
+              
+              # For mcp-domain-availability, prefer fork version of conflicted files
+              if [ "${{ matrix.fork.name }}" = "mcp-domain-availability" ]; then
+                echo "🔧 Resolving conflicts for mcp-domain-availability"
+                
+                # Accept current version (fork) for conflicted files
+                git checkout --ours smithery.yaml Dockerfile 2>/dev/null || true
+                git add smithery.yaml Dockerfile 2>/dev/null || true
+                
+                # Try to complete the merge
+                if git commit --no-edit 2>/dev/null; then
+                  git push origin main
+                  echo "✅ Updated with conflict resolution (kept fork versions)"
+                else
+                  echo "::warning::❌ Could not auto-resolve conflicts for ${{ matrix.fork.name }}"
+                  echo "Manual resolution needed: https://github.com/mcp-series/${{ matrix.fork.name }}/compare/main...${{ matrix.fork.upstream }}:main"
+                fi
+              else
+                echo "::error::❌ Merge conflicts in ${{ matrix.fork.name }} - manual resolution required"
+                echo "Manual resolution needed: https://github.com/mcp-series/${{ matrix.fork.name }}/compare/main...${{ matrix.fork.upstream }}:main"
+              fi
+            fi
+          fi
+        env:
+          ORG_TOKEN: ${{ secrets.ORG_TOKEN }}
+
+  summary:
+    needs: update-forks
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Summary
+        run: |
+          echo "## 🔄 Fork Update Complete" >> $GITHUB_STEP_SUMMARY
+          echo "**Date:** $(date -u '+%Y-%m-%d %H:%M:%S UTC')" >> $GITHUB_STEP_SUMMARY
+          echo "**Status:** ${{ needs.update-forks.result }}" >> $GITHUB_STEP_SUMMARY

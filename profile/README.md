@@ -1,4 +1,9 @@
-# MCP Series
+<h2 style="display: flex; align-items: center; margin: 0;">
+  <a href="https://github.com/mcp-series">
+    <img src="https://raw.githubusercontent.com/mcp-series/.github/main/mcp-series-logo.png" width="25" height="25" style="margin-right: 10px; transform: translateY(2px);">
+  </a>
+  <span>MCP Series</span>
+</h2>
 
 A comprehensive collection of Model Context Protocol (MCP) servers that empower AI assistants with advanced capabilities to interact with external services, platforms, content sources, and real-time data.
 

@@ -1,10 +1,15 @@
-# MCP Series
+<h2 style="display: flex; align-items: center; margin: 0;">
+  <a href="https://github.com/mcp-series">
+    <img src="https://raw.githubusercontent.com/mcp-series/.github/main/mcp-series-logo.png" width="25" height="25" style="margin-right: 10px; transform: translateY(2px);">
+  </a>
+  <span>MCP Series</span>
+</h2>
 
 A comprehensive collection of Model Context Protocol (MCP) servers that empower AI assistants with advanced capabilities to interact with external services, platforms, content sources, and real-time data.
 
 ## About MCP Series
 
-MCP Series is a professional organization dedicated to developing and maintaining enterprise-grade Model Context Protocol (MCP) servers. Our mission is to extend the capabilities of Large Language Models (LLMs) through rigorously designed integrations, enabling seamless connections between AI systems and a diverse range of external services, applications, and real-time data sources. We currently maintain a growing ecosystem of four production-ready MCP servers with more integrations in active development.
+MCP Series is a professional organization dedicated to developing and maintaining enterprise-grade Model Context Protocol (MCP) servers. Our mission is to extend the capabilities of Large Language Models (LLMs) through rigorously designed integrations, enabling seamless connections between AI systems and a diverse range of external services, applications, and real-time data sources. We currently maintain a growing ecosystem of eight production-ready MCP servers with more integrations in active development.
 
 ### What is the Model Context Protocol (MCP)?
 
@@ -12,14 +17,35 @@ MCP Series is a professional organization dedicated to developing and maintainin
 
 ## Our Repositories
 
-| Repository | Description | Key Features |
-|------------|-------------|--------------|
-| [**mcp-browser-agent**](https://github.com/imprvhub/mcp-browser-agent) | Browser automation and web interaction capabilities | <ul><li>Navigate to websites and control page interactions</li><li>Fill forms and submit data</li><li>Take screenshots and capture page content</li><li>Execute JavaScript on web pages</li><li>Perform API requests and process responses</li><li>Support for multiple browser engines</li></ul> |
-| [**mcp-status-observer**](https://github.com/mcp-series/mcp-status-observer) | Real-time monitoring of major digital platforms | <ul><li>Track operational status across 20+ platforms</li><li>Detailed component-level monitoring</li><li>Status history and incident tracking</li><li>Support for GitHub, Cloudflare, Vercel, LinkedIn, etc.</li></ul> |
-| [**mcp-claude-hackernews**](https://github.com/mcp-series/mcp-claude-hackernews) | Browse and interact with Hacker News content | <ul><li>Access latest, top, and best-rated stories</li><li>View story details and comments</li><li>Clean formatting for improved readability</li><li>Natural language query support</li></ul> |
-| [**mcp-claude-spotify**](https://github.com/mcp-series/mcp-claude-spotify) | Comprehensive Spotify control and management | <ul><li>Search tracks, albums, artists, and playlists</li><li>Full playback control</li><li>Create and manage playlists</li><li>Personalized recommendations</li><li>Access top played tracks</li></ul> |
-| [**mcp-rss-aggregator**](https://github.com/mcp-series/mcp-rss-aggregator) | Versatile RSS feed reader and content aggregator | <ul><li>Read articles from multiple RSS feeds</li><li>OPML import support for existing subscriptions</li><li>Category-based organization</li><li>Source-specific filtering</li><li>Well-formatted article presentation</li></ul> |
+| Repository | Description | Key Features | Language | Owner |
+|------------|-------------|--------------|----------|--------|
+| [**mcp-browser-agent**](https://github.com/mcp-series/mcp-browser-agent) | Browser automation and web interaction capabilities | <ul><li>Navigate to websites and control page interactions</li><li>Fill forms and submit data</li><li>Take screenshots and capture page content</li><li>Execute JavaScript on web pages</li><li>Perform API requests and process responses</li><li>Support for multiple browser engines</li></ul> | TypeScript | [@imprvhub](https://github.com/imprvhub) |
+| [**mcp-domain-availability**](https://github.com/imprvhub/mcp-domain-availability) | Domain availability checking and discovery | <ul><li>Check domain availability across popular TLDs</li><li>Bulk domain verification support</li><li>Intelligent domain suggestions</li><li>Support for exact domain queries</li><li>No external API dependencies</li></ul> | Python | [@imprvhub](https://github.com/imprvhub) |
+| [**mcp-status-observer**](https://github.com/mcp-series/mcp-status-observer) | Real-time monitoring of major digital platforms | <ul><li>Track operational status across 20+ platforms</li><li>Detailed component-level monitoring</li><li>Status history and incident tracking</li><li>Support for GitHub, Cloudflare, Vercel, LinkedIn, etc.</li></ul> | TypeScript | [@imprvhub](https://github.com/imprvhub) |
+| [**mcp-local-rag**](https://github.com/nkapila6/mcp-local-rag) | Local RAG-like web search without APIs | <ul><li>Primitive RAG-like web search functionality</li><li>Runs completely locally without external APIs</li><li>Docker and UV deployment support</li><li>Semantic search capabilities</li><li>Privacy-focused local processing</li></ul> | Python | [@nkapila6](https://github.com/nkapila6) |
+| [**mcp-claude-spotify**](https://github.com/mcp-series/mcp-claude-spotify) | Comprehensive Spotify control and management | <ul><li>Search tracks, albums, artists, and playlists</li><li>Full playback control</li><li>Create and manage playlists</li><li>Personalized recommendations</li><li>Access top played tracks</li></ul> | TypeScript | [@imprvhub](https://github.com/imprvhub) |
+| [**mcp-meme-sticky**](https://github.com/nkapila6/mcp-meme-sticky) | AI-powered meme generation and sticker creation | <ul><li>Create AI-generated memes using MCP</li><li>Convert generated memes into stickers for Telegram</li><li>WhatsApp sticker support (coming soon)</li><li>No external APIs required</li><li>Local meme generation capabilities</li></ul> | Python | [@nkapila6](https://github.com/nkapila6) |
+| [**mcp-claude-hackernews**](https://github.com/mcp-series/mcp-claude-hackernews) | Browse and interact with Hacker News content | <ul><li>Access latest, top, and best-rated stories</li><li>View story details and comments</li><li>Clean formatting for improved readability</li><li>Natural language query support</li></ul> | TypeScript | [@imprvhub](https://github.com/imprvhub) |
+| [**mcp-rss-aggregator**](https://github.com/mcp-series/mcp-rss-aggregator) | Versatile RSS feed reader and content aggregator | <ul><li>Read articles from multiple RSS feeds</li><li>OPML import support for existing subscriptions</li><li>Category-based organization</li><li>Source-specific filtering</li><li>Well-formatted article presentation</li></ul> | TypeScript | [@imprvhub](https://github.com/imprvhub) |
 
+
+
+
+## Technology Stack & Languages
+
+Our MCP servers are built using modern technologies and programming languages to ensure optimal performance and developer experience:
+
+**TypeScript/Node.js Servers:**
+- Advanced TypeScript implementation with full type safety
+- Node.js runtime for efficient server operations
+- npm package management for easy distribution
+- Modern ES modules and async/await patterns
+
+**Python Servers:**
+- Python 3.10+ with modern async capabilities
+- UV package manager for fast dependency resolution
+- Docker containerization for seamless deployment
+- FastMCP and official Python MCP SDK integration
 
 ## Contributing
 
@@ -37,12 +63,24 @@ We particularly value contributions that:
 - Add new platform integrations
 - Enhance existing functionality
 - Improve error handling and resilience
-- Optimize performance
-- Extend documentation
+- Optimize performance across different programming languages
+- Extend documentation and examples
+- Support cross-platform compatibility
 
-## License
+## Development Guidelines
 
-All MCP Series repositories are licensed under the Mozilla Public License 2.0, which allows for open collaboration while protecting our collective work.
+**For TypeScript/Node.js servers:**
+- Follow modern TypeScript best practices
+- Use ESLint and Prettier for code formatting
+- Implement comprehensive error handling
+- Include type definitions for all interfaces
+
+**For Python servers:**
+- Follow PEP 8 style guidelines
+- Use type hints throughout the codebase
+- Implement proper async/await patterns
+- Include comprehensive docstrings
+
 
 ## Contact & Support
 
