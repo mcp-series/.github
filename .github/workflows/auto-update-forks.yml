@@ -22,8 +22,6 @@ jobs:
           - { name: "mcp-rss-aggregator", upstream: "imprvhub/mcp-rss-aggregator" }
           - { name: "mcp-status-observer", upstream: "imprvhub/mcp-status-observer" }
           - { name: "mcp-browser-agent", upstream: "imprvhub/mcp-browser-agent" }
-          - { name: "mcp-meme-sticky", upstream: "nkapila6/mcp-meme-sticky" }
-          - { name: "mcp-local-rag", upstream: "nkapila6/mcp-local-rag" }
           - { name: "mcp-domain-availability", upstream: "imprvhub/mcp-domain-availability" }
           - { name: "mcp-prompt-engineer", upstream: "imprvhub/mcp-prompt-engineer" }
     
